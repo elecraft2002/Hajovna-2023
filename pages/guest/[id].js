@@ -23,19 +23,15 @@ import favicon from "/assets/images/beer.png";
 import image1 from "/assets/images/_DSC0055.jpg";
 import Image from "next/image";
 
-
-
-const useGyroscope = ({
-  frequency
-} = {}, callback) => {
+const useGyroscope = ({ frequency } = {}, callback) => {
   const [angularVelocity, setAngularVelocity] = useState({
     x: null,
     y: null,
-    z: null
+    z: null,
   });
   useEffect(() => {
     let sensor = new window.Gyroscope({
-      frequency
+      frequency,
     });
 
     if (sensor) {
@@ -45,23 +41,21 @@ const useGyroscope = ({
         const readings = {
           x: sensor.x,
           y: sensor.y,
-          z: sensor.z
+          z: sensor.z,
         };
-        setAngularVelocity({ ...readings
-        });
+        setAngularVelocity({ ...readings });
 
         if (callback instanceof Function) {
-          callback({ ...readings
-          });
+          callback({ ...readings });
         }
       };
 
-      sensor.onerror = event => {
+      sensor.onerror = (event) => {
         console.log(event.error.name, event.error.message);
         setAngularVelocity({
           x: null,
           y: null,
-          z: null
+          z: null,
         });
       };
     }
@@ -70,7 +64,6 @@ const useGyroscope = ({
   }, [callback, frequency]);
   return angularVelocity;
 };
-
 
 const StyledAnimationContainer = styled.div`
   /* height: 400vh; */
@@ -98,6 +91,7 @@ const Effects = () => {
 };
 
 const ScrollBasedAnimation = ({ frame, animationLength }) => {
+  const gyroscope = useGyroscope();
   const animationPosition = {
     data: [
       [16, 6, -5], //1
@@ -164,18 +158,18 @@ const ScrollBasedAnimation = ({ frame, animationLength }) => {
     );
     camera.rotation.x = THREE.MathUtils.lerp(
       camera.rotation.x,
-      cameraRotationX,
-      0.1
+      cameraRotationX + gyroscope.x,
+      0.2
     );
     camera.rotation.y = THREE.MathUtils.lerp(
       camera.rotation.y,
-      cameraRotationY,
-      0.1
+      cameraRotationY + gyroscope.y,
+      0.2
     );
     camera.rotation.z = THREE.MathUtils.lerp(
       camera.rotation.z,
-      cameraRotationZ,
-      0.1
+      cameraRotationZ + gyroscope.z,
+      0.2
     );
   });
 };
@@ -184,7 +178,7 @@ const StyledContentContainer = styled.main`
   color: ${COLORS.dark};
   position: relative;
   text-align: center;
-  padding-top: 50vh;
+  padding-top: 10vh;
   margin-bottom: 100vh;
 `;
 const StyledTextContainer = styled.span`
@@ -212,16 +206,10 @@ const Content = ({ setAnimationLength }) => {
     console.log(ref.current.clientHeight);
     setAnimationLength(ref.current.clientHeight);
   }, []);
-  const gyroscope = useGyroscope();
   console.log(image1);
   return (
     <StyledContentContainer ref={ref}>
       <StyledTextContainer>
-        <ul>
-          <li>X: {gyroscope.x}</li>
-          <li>Y: {gyroscope.y}</li>
-          <li>Z: {gyroscope.z}</li>
-        </ul>
         <h1>Hájovna 2023</h1>
         <p>
           Rok se s rokem sešel a nastal čas zopakovat již tradiční hájovnu na
