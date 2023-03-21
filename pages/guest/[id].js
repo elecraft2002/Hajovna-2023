@@ -213,10 +213,10 @@ const Content = ({ setAnimationLength }) => {
           Opravdu jste si mysleli, že to byla poslední <strong>Hájovna</strong>?
           Dovolte nám Vás vyvést ze strašlivého omylu. Tomuto zvěrstvu ještě
           neodzvonilo a tradice se dodrží i tento rok! A co je ještě lepší? Že
-          <strong>TY</strong> můžeš být u toho! To, co právě teď, jistě v
+          <strong> TY</strong> můžeš být u toho! To, co právě teď, jistě v
           nepopsatelné euforii čteš, je oficiální pozvánka na
-          <strong>Hájovnu 2023</strong>! Řekni mamce, že 4. a možná radši i
-          <strong>5. července</strong> nebudeš doma.
+          <strong> Hájovnu 2023</strong>! Řekni mamce, že 4. a možná radši i
+          <strong> 5. července</strong> nebudeš doma.
         </p>
         <p>
           Bude zle,
