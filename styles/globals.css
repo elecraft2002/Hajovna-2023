@@ -114,3 +114,12 @@ p {
     color-scheme: dark;
   }
 }
+h1 {
+  margin: 1rem 0rem;
+}
+h2 {
+  margin: 0.8rem 0rem;
+}
+h3 {
+  margin: 0.6rem 0rem;
+}
