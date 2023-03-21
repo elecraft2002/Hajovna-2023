@@ -1,13 +1,21 @@
 import { Model } from "@/components/model/model";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Suspense, useEffect, useRef, useState } from "react";
-import { Instances, OrbitControls, Stage } from "@react-three/drei";
+import {
+  Html,
+  Instances,
+  OrbitControls,
+  Stage,
+  Text3D,
+} from "@react-three/drei";
 import { interpolate } from "remotion";
 import styled from "styled-components";
 import { Scroll, ScrollControls } from "@react-three/drei";
 import * as THREE from "three";
 import { EffectComposer, SSAO } from "@react-three/postprocessing";
 import { BlendFunction } from "postprocessing";
+import Roboto from "../assets/fonts/Roboto Medium_Regular.json";
+
 const StyledAnimationContainer = styled.div`
   height: 400vh;
   background: white;
@@ -41,7 +49,12 @@ const ScrollBasedAnimation = ({ frame }) => {
       [10 - 1, 0 - 4, -6], //3
       [10 - 1, 0 - 4, -6], //3
     ],
-    time: [0, window.innerHeight, window.innerHeight*2, window.innerHeight*3],
+    time: [
+      0,
+      window.innerHeight,
+      window.innerHeight * 2,
+      window.innerHeight * 3,
+    ],
   };
   const animationRotation = {
     data: [
@@ -51,7 +64,12 @@ const ScrollBasedAnimation = ({ frame }) => {
       [0, 100, 0], //3
       [0, 100, 0], //3
     ],
-    time: [0, window.innerHeight, window.innerHeight*2, window.innerHeight*3],
+    time: [
+      0,
+      window.innerHeight,
+      window.innerHeight * 2,
+      window.innerHeight * 3,
+    ],
   };
 
   const cameraPositionX = interpolate(
@@ -88,32 +106,32 @@ const ScrollBasedAnimation = ({ frame }) => {
     camera.position.x = THREE.MathUtils.lerp(
       camera.position.x,
       cameraPositionX + mouse.x * 0.05,
-      0.05
+      0.1
     );
     camera.position.y = THREE.MathUtils.lerp(
       camera.position.y,
       cameraPositionY + mouse.y * 0.08,
-      0.05
+      0.1
     );
     camera.position.z = THREE.MathUtils.lerp(
       camera.position.z,
       cameraPositionZ + Math.abs(mouse.x * mouse.y * 0.08),
-      0.05
+      0.1
     );
     camera.rotation.x = THREE.MathUtils.lerp(
       camera.rotation.x,
       cameraRotationX,
-      0.05
+      0.1
     );
     camera.rotation.y = THREE.MathUtils.lerp(
       camera.rotation.y,
       cameraRotationY,
-      0.05
+      0.1
     );
     camera.rotation.z = THREE.MathUtils.lerp(
       camera.rotation.z,
       cameraRotationZ,
-      0.05
+      0.1
     );
   });
   return null;
@@ -126,10 +144,13 @@ const ScrollBasedAnimation = ({ frame }) => {
 const Scene = () => {
   const ref = useRef(null);
   const [frame, updateFrame] = useState(0);
+  const [fontSize, setFontSize] = useState(1);
   const handleScroll = () => {
     updateFrame(window.scrollY);
   };
+
   useEffect(() => {
+    setFontSize(window.innerWidth / 1000);
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -162,6 +183,19 @@ const Scene = () => {
               {/* <ambientLight intensity={1} /> */}
               <hemisphereLight />
               <Model />
+              <mesh castShadow receiveShadow>
+                <Text3D
+                  font={Roboto}
+                  position={[11.38, 8.9, 1.96]}
+                  rotation={[0, deg2rad(90), 0]}
+                  castShadow
+                  receiveShadow
+                  size={fontSize}
+                >
+                  <meshStandardMaterial color={"orange"} />
+                  Ahooj
+                </Text3D>
+              </mesh>
               <ScrollBasedAnimation frame={frame} />
             </Stage>
           </Suspense>
@@ -176,6 +210,17 @@ const Scene = () => {
           /> */}
         </Canvas>
       </StyledCanvasContainer>
+      <p>
+        Rok se s rokem sešel a nastal čas zopakovat již tradiční hájovnu na
+        oslavu začátku léta. Obdržením této pozvánky jste se staly jedním z
+        vyvolených, kteří se této akce budou moci účastnit. Až tento radostný
+        šok vydejcháš, zapiš si do diářku datum 4. Července, ať kvůli tomu pak
+        nemusíš něco rušit. Jídlo a pití pro tebe rádi zajistíme, takže s sebou
+        ber jen symbolický vstup 300kč, návykové látky dle vlastní volby a pokud
+        se chceš vypsat tak doporučujeme stan. (Pokud plánuješ přijet autem, tak
+        možná radši dej vědět Jonášovi, ať je jistota že pro tebe budeme mít
+        místo)
+      </p>
     </StyledAnimationContainer>
   );
 };

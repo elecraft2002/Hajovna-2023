@@ -237,7 +237,7 @@ export function Model(props) {
           scale={[-1, -0.1, -0.47]}
           userData={{ name: "Cube.007" }}
         />
-        <mesh
+        {/*  <mesh
           name="Text"
           castShadow
           receiveShadow
@@ -247,29 +247,30 @@ export function Model(props) {
           rotation={[Math.PI / 2, 0, -2.6]}
           scale={0.44}
           userData={{ name: "Text" }}
-        />
+        /> */}
         <mesh
           name="Text001"
-          castShadow
-          receiveShadow
           geometry={nodes.Text001.geometry}
           material={nodes.Text001.material}
           position={[11.38, 8.9, 1.96]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={1.51}
+          scale={0}
           userData={{ name: "Text.001" }}
-        />
-        <mesh
-          name="Text002"
-          castShadow
-          receiveShadow
-          geometry={nodes.Text002.geometry}
-          material={nodes.Text002.material}
-          position={[5.16, -1.5, -0.39]}
-          rotation={[Math.PI / 2, 0, -1.66]}
-          scale={0.44}
-          userData={{ name: "Text.002" }}
-        />
+        >
+          <meshStandardMaterial color={"white"} />
+        </mesh>
+        {/* <mesh
+              name="Text002"
+              castShadow
+              receiveShadow
+              geometry={nodes.Text002.geometry}
+              material={nodes.Text002.material}
+              position={[5.16, -1.5, -0.39]}
+              rotation={[Math.PI / 2, 0, -1.66]}
+              scale={0.44}
+              userData={{ name: "Text.002" }}
+            /> */}
+
         <mesh
           name="Bush"
           castShadow
