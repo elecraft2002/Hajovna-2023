@@ -22,6 +22,7 @@ import Head from "next/head";
 import favicon from "/assets/images/beer.png";
 import image1 from "/assets/images/_DSC0055.jpg";
 import Image from "next/image";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 
 const StyledAnimationContainer = styled.div`
   /* height: 400vh; */
@@ -205,8 +206,8 @@ const Content = ({ setAnimationLength }) => {
         <h2>DOPRAVA AUTEM</h2>
         <p>
           Příjezd <strong>kočárem</strong> hlas předem, ať máš kde zaparkovat, a
-          jestli nevyšla maturita, takže taťka nekoupil auto, tak k nám jezdí 15.
-          Adresa je
+          jestli nevyšla maturita, takže taťka nekoupil auto, tak k nám jezdí
+          15. Adresa je
           <span>
             <a href="https://goo.gl/maps/ZPBfCVkDRLU1PVPL7" target="_blank">
               Lukášovská 41
@@ -316,6 +317,7 @@ const Scene = ({ guest }) => {
 export default function Home({ guest }) {
   return (
     <main>
+      <GoogleAnalytics trackPageViews />
       <Head>
         <link rel="icon" type="image/x-icon" href={favicon.src} />
         <title>Hájovna 2023 | {guest.name}</title>
