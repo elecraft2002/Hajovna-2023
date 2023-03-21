@@ -204,7 +204,9 @@ const Content = ({ setAnimationLength }) => {
         </p>
         <h2>DOPRAVA AUTEM</h2>
         <p>
-          Příjezd kočárem hlas předem, ať máš kde zaparkovat. Adresa je
+          Příjezd <strong>kočárem</strong> hlas předem, ať máš kde zaparkovat, a
+          jestli nevyšla maturita, takže taťka nekoupil auto, tak k nám jezdí 15.
+          Adresa je
           <span>
             <a href="https://goo.gl/maps/ZPBfCVkDRLU1PVPL7" target="_blank">
               Lukášovská 41
