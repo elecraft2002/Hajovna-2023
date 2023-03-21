@@ -348,7 +348,7 @@ export default function Home({ guest }) {
     <main>
       <Head>
         <link rel="icon" type="image/x-icon" href={favicon.src} />
-        <title>Hájovna 2023</title>
+        <title>Hájovna 2023 | {guest.name}</title>
       </Head>
       <Scene guest={guest} />
       <footer>Vojtík Suchánek 2023</footer>
