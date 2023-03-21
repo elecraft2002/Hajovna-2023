@@ -23,48 +23,6 @@ import favicon from "/assets/images/beer.png";
 import image1 from "/assets/images/_DSC0055.jpg";
 import Image from "next/image";
 
-const useGyroscope = ({ frequency } = {}, callback) => {
-  const [angularVelocity, setAngularVelocity] = useState({
-    x: null,
-    y: null,
-    z: null,
-  });
-  useEffect(() => {
-    let sensor = new window.Gyroscope({
-      frequency,
-    });
-
-    if (sensor) {
-      sensor.start();
-
-      sensor.onreading = () => {
-        const readings = {
-          x: sensor.x,
-          y: sensor.y,
-          z: sensor.z,
-        };
-        setAngularVelocity({ ...readings });
-
-        if (callback instanceof Function) {
-          callback({ ...readings });
-        }
-      };
-
-      sensor.onerror = (event) => {
-        // console.log(event.error.name, event.error.message);
-        setAngularVelocity({
-          x: null,
-          y: null,
-          z: null,
-        });
-      };
-    }
-
-    return () => {};
-  }, [callback, frequency]);
-  return angularVelocity;
-};
-
 const StyledAnimationContainer = styled.div`
   /* height: 400vh; */
   background: white;
@@ -91,7 +49,6 @@ const Effects = () => {
 };
 
 const ScrollBasedAnimation = ({ frame, animationLength }) => {
-  const gyroscope = useGyroscope();
   const animationPosition = {
     data: [
       [16, 6, -5], //1
@@ -158,17 +115,17 @@ const ScrollBasedAnimation = ({ frame, animationLength }) => {
     );
     camera.rotation.x = THREE.MathUtils.lerp(
       camera.rotation.x,
-      cameraRotationX + gyroscope.x,
+      cameraRotationX,
       0.2
     );
     camera.rotation.y = THREE.MathUtils.lerp(
       camera.rotation.y,
-      cameraRotationY + gyroscope.y,
+      cameraRotationY,
       0.2
     );
     camera.rotation.z = THREE.MathUtils.lerp(
       camera.rotation.z,
-      cameraRotationZ + gyroscope.z,
+      cameraRotationZ,
       0.2
     );
   });
