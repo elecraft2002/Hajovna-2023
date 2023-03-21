@@ -216,7 +216,10 @@ const Content = ({ setAnimationLength }) => {
           <strong>TY</strong> můžeš být u toho! To, co právě teď, jistě v
           nepopsatelné euforii čteš, je oficiální pozvánka na
           <strong>Hájovnu 2023</strong>! Řekni mamce, že 4. a možná radši i
-          <strong>5. července</strong> nebudeš doma. Bude zle,
+          <strong>5. července</strong> nebudeš doma.
+        </p>
+        <p>
+          Bude zle,
           <strong>L18</strong>
         </p>
         <br />
@@ -228,14 +231,12 @@ const Content = ({ setAnimationLength }) => {
           <strong>ALL-INCLUSIVE</strong>, co si budeš užívat na 2 (slovy dvou)
           barech.
         </p>
-
         <h2>SPANÍ</h2>
         <p>
           V případě, že se chceš na akci vyspat, přibal si do batůžku spacák a
           pro sichr i stan. Vevnitř to není úplně jistota, většinou na pokojích
           vládne anarchie.
         </p>
-
         <h2>DOPRAVA MHD</h2>
         <p>
           Na místo konání jezdí MHD. Z hlavního terminálu Fugnerova si chyť
@@ -244,7 +245,6 @@ const Content = ({ setAnimationLength }) => {
           Myslivna. Můžeš se svézt až tam a nebo vystoupit o jednu dřív
           <strong>(Kadlická)</strong>. Vyjde to časově nastejno.
         </p>
-
         <h2>DOPRAVA AUTEM</h2>
         <p>
           Příjezd kočárem hlas předem, ať máš kde zaparkovat. Adresa je
