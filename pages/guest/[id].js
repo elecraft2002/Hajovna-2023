@@ -216,7 +216,7 @@ const Content = ({ setAnimationLength }) => {
           <strong> TY</strong> můžeš být u toho! To, co právě teď, jistě v
           nepopsatelné euforii čteš, je oficiální pozvánka na
           <strong> Hájovnu 2023</strong>! Řekni mamce, že 4. a možná radši i
-          <strong> 5. července</strong> nebudeš doma.
+          <strong> 5. července</strong> nebudeš doma.
         </p>
         <p>
           Bude zle,
