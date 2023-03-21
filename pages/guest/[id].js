@@ -51,7 +51,7 @@ const useGyroscope = ({ frequency } = {}, callback) => {
       };
 
       sensor.onerror = (event) => {
-        console.log(event.error.name, event.error.message);
+        // console.log(event.error.name, event.error.message);
         setAngularVelocity({
           x: null,
           y: null,
@@ -203,35 +203,46 @@ const StyledImage = styled(Image)`
 const Content = ({ setAnimationLength }) => {
   const ref = useRef(null);
   useEffect(() => {
-    console.log(ref.current.clientHeight);
     setAnimationLength(ref.current.clientHeight);
   }, []);
-  console.log(image1);
   return (
     <StyledContentContainer ref={ref}>
       <StyledTextContainer>
         <h1>Hájovna 2023</h1>
+        <h2>OBČERSTVENÍ</h2>
         <p>
-          Rok se s rokem sešel a nastal čas zopakovat již tradiční hájovnu na
-          oslavu začátku léta.
+          Veškeré občerstvení zařídíme (ano, i chlast). Jenom teda počítáme s
+          tím, že tě nezabije symbolických <strong>300 Kč</strong> za ten
+          nehorázný
+          <strong>ALL-INCLUSIVE</strong>, co si budeš užívat na 2 (slovy dvou)
+          barech.
         </p>
+
+        <h2>SPANÍ</h2>
         <p>
-          Obdržením této pozvánky jste se staly jedním z
-          <strong>vyvolených</strong>, kteří se této akce budou moci účastnit!
+          V případě, že se chceš na akci vyspat, přibal si do batůžku spacák a
+          pro sichr i stan. Vevnitř to není úplně jistota, většinou na pokojích
+          vládne anarchie.
         </p>
+
+        <h2>DOPRAVA MHD</h2>
         <p>
-          Až tento radostný šok vydejcháš, zapiš si do diářku datum 4. července,
-          ať kvůli tomu pak nemusíš něco rušit.
+          Na místo konání jezdí MHD. Z hlavního terminálu Fugnerova si chyť{" "}
+          <strong>bus</strong>
+          číslo <strong>15</strong> a dávej bacha, ať jede až na zastávku Harcov
+          Myslivna. Můžeš se svézt až tam a nebo vystoupit o jednu dřív{" "}
+          <strong>(Kadlická)</strong>. Vyjde to časově nastejno.
         </p>
-        <h2>Co s sebou?</h2>
+
+        <h2>DOPRAVA AUTEM</h2>
         <p>
-          Jídlo a pití pro tebe rádi zajistíme, takže s sebou ber jen symbolický
-          vstup 300kč, návykové látky dle vlastní volby a pokud se chceš vypsat
-          tak doporučujeme stan.
-        </p>
-        <p>
-          (Pokud plánuješ přijet autem, tak možná radši dej vědět Jonášovi, ať
-          je jistota že pro tebe budeme mít místo)
+          Příjezd kočárem hlas předem, ať máš kde zaparkovat. Adresa je
+          <span>
+            <a href="https://goo.gl/maps/ZPBfCVkDRLU1PVPL7" target="_blank">
+              Lukášovská 41
+            </a>
+          </span>
+          .
         </p>
         <h3>Už se na tebe těšíme ty hovado.</h3>
         <StyledImage {...image1} />
@@ -333,7 +344,6 @@ const Scene = ({ guest }) => {
   );
 };
 export default function Home({ guest }) {
-  console.log(guest);
   return (
     <main>
       <Head>
