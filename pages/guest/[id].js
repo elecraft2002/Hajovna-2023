@@ -209,6 +209,17 @@ const Content = ({ setAnimationLength }) => {
     <StyledContentContainer ref={ref}>
       <StyledTextContainer>
         <h1>Hájovna 2023</h1>
+        <p>
+          Opravdu jste si mysleli, že to byla poslední <strong>Hájovna</strong>?
+          Dovolte nám Vás vyvést ze strašlivého omylu. Tomuto zvěrstvu ještě
+          neodzvonilo a tradice se dodrží i tento rok! A co je ještě lepší? Že
+          <strong>TY</strong> můžeš být u toho! To, co právě teď, jistě v
+          nepopsatelné euforii čteš, je oficiální pozvánka na
+          <strong>Hájovnu 2023</strong>! Řekni mamce, že 4. a možná radši i
+          <strong>5. července</strong> nebudeš doma. Bude zle,
+          <strong>L18</strong>
+        </p>
+        <br />
         <h2>OBČERSTVENÍ</h2>
         <p>
           Veškeré občerstvení zařídíme (ano, i chlast). Jenom teda počítáme s
@@ -227,10 +238,10 @@ const Content = ({ setAnimationLength }) => {
 
         <h2>DOPRAVA MHD</h2>
         <p>
-          Na místo konání jezdí MHD. Z hlavního terminálu Fugnerova si chyť{" "}
+          Na místo konání jezdí MHD. Z hlavního terminálu Fugnerova si chyť
           <strong>bus</strong>
           číslo <strong>15</strong> a dávej bacha, ať jede až na zastávku Harcov
-          Myslivna. Můžeš se svézt až tam a nebo vystoupit o jednu dřív{" "}
+          Myslivna. Můžeš se svézt až tam a nebo vystoupit o jednu dřív
           <strong>(Kadlická)</strong>. Vyjde to časově nastejno.
         </p>
 
