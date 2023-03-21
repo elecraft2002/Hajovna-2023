@@ -19,8 +19,58 @@ import { COLORS } from "../_app";
 import guestList from "../guestList.json";
 import randomColor from "randomcolor";
 import Head from "next/head";
+import favicon from "/assets/images/beer.png";
 import image1 from "/assets/images/_DSC0055.jpg";
 import Image from "next/image";
+
+
+
+const useGyroscope = ({
+  frequency
+} = {}, callback) => {
+  const [angularVelocity, setAngularVelocity] = useState({
+    x: null,
+    y: null,
+    z: null
+  });
+  useEffect(() => {
+    let sensor = new window.Gyroscope({
+      frequency
+    });
+
+    if (sensor) {
+      sensor.start();
+
+      sensor.onreading = () => {
+        const readings = {
+          x: sensor.x,
+          y: sensor.y,
+          z: sensor.z
+        };
+        setAngularVelocity({ ...readings
+        });
+
+        if (callback instanceof Function) {
+          callback({ ...readings
+          });
+        }
+      };
+
+      sensor.onerror = event => {
+        console.log(event.error.name, event.error.message);
+        setAngularVelocity({
+          x: null,
+          y: null,
+          z: null
+        });
+      };
+    }
+
+    return () => {};
+  }, [callback, frequency]);
+  return angularVelocity;
+};
+
 
 const StyledAnimationContainer = styled.div`
   /* height: 400vh; */
@@ -162,10 +212,16 @@ const Content = ({ setAnimationLength }) => {
     console.log(ref.current.clientHeight);
     setAnimationLength(ref.current.clientHeight);
   }, []);
+  const gyroscope = useGyroscope();
   console.log(image1);
   return (
     <StyledContentContainer ref={ref}>
       <StyledTextContainer>
+        <ul>
+          <li>X: {gyroscope.x}</li>
+          <li>Y: {gyroscope.y}</li>
+          <li>Z: {gyroscope.z}</li>
+        </ul>
         <h1>Hájovna 2023</h1>
         <p>
           Rok se s rokem sešel a nastal čas zopakovat již tradiční hájovnu na
@@ -293,6 +349,7 @@ export default function Home({ guest }) {
   return (
     <main>
       <Head>
+        <link rel="icon" type="image/x-icon" href={favicon.src} />
         <title>Hájovna 2023</title>
       </Head>
       <Scene guest={guest} />
