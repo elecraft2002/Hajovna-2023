@@ -18,6 +18,9 @@ import Roboto from "../../assets/fonts/Roboto Medium_Regular.json";
 import { COLORS } from "../_app";
 import guestList from "../guestList.json";
 import randomColor from "randomcolor";
+import Head from "next/head";
+import image1 from "/assets/images/_DSC0055.jpg";
+import Image from "next/image";
 
 const StyledAnimationContainer = styled.div`
   /* height: 400vh; */
@@ -59,14 +62,8 @@ const ScrollBasedAnimation = ({ frame, animationLength }) => {
       [0, 90, 0], //1
       [0, 140, 0], //2
       [0, 100, 0], //3
-      [0, 100, 0], //3
     ],
-    time: [
-      0,
-      window.innerHeight,
-      window.innerHeight * 2,
-      window.innerHeight * 3,
-    ],
+    time: [0, animationLength, animationLength + window.innerHeight],
   };
 
   const cameraPositionX = interpolate(
@@ -140,48 +137,61 @@ const StyledContentContainer = styled.main`
   padding-top: 50vh;
   margin-bottom: 100vh;
 `;
-
+const StyledTextContainer = styled.span`
+  display: flex;
+  margin: auto;
+  padding: 1rem;
+  margin: auto;
+  max-width: 1000px;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+`;
+const StyledImage = styled(Image)`
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+`;
 const Content = ({ setAnimationLength }) => {
   const ref = useRef(null);
   useEffect(() => {
     console.log(ref.current.clientHeight);
     setAnimationLength(ref.current.clientHeight);
   }, []);
+  console.log(image1);
   return (
     <StyledContentContainer ref={ref}>
-      <h1>Hájovna 2023</h1>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
-      <p>lorem...</p>
+      <StyledTextContainer>
+        <h1>Hájovna 2023</h1>
+        <p>
+          Rok se s rokem sešel a nastal čas zopakovat již tradiční hájovnu na
+          oslavu začátku léta.
+        </p>
+        <p>
+          Obdržením této pozvánky jste se staly jedním z
+          <strong>vyvolených</strong>, kteří se této akce budou moci účastnit!
+        </p>
+        <p>
+          Až tento radostný šok vydejcháš, zapiš si do diářku datum 4. července,
+          ať kvůli tomu pak nemusíš něco rušit.
+        </p>
+        <h2>Co s sebou?</h2>
+        <p>
+          Jídlo a pití pro tebe rádi zajistíme, takže s sebou ber jen symbolický
+          vstup 300kč, návykové látky dle vlastní volby a pokud se chceš vypsat
+          tak doporučujeme stan.
+        </p>
+        <p>
+          (Pokud plánuješ přijet autem, tak možná radši dej vědět Jonášovi, ať
+          je jistota že pro tebe budeme mít místo)
+        </p>
+        <h3>Už se na tebe těšíme ty hovado.</h3>
+        <StyledImage {...image1} />
+      </StyledTextContainer>
     </StyledContentContainer>
   );
 };
@@ -282,7 +292,11 @@ export default function Home({ guest }) {
   console.log(guest);
   return (
     <main>
+      <Head>
+        <title>Hájovna 2023</title>
+      </Head>
       <Scene guest={guest} />
+      <footer>Vojtík Suchánek 2023</footer>
     </main>
   );
 }
