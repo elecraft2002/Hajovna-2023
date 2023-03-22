@@ -26,7 +26,7 @@ import { GoogleAnalytics } from "nextjs-google-analytics";
 
 const StyledAnimationContainer = styled.div`
   /* height: 400vh; */
-  background: white;
+  background: #d3f5ff;
   width: 100vw;
 `;
 const StyledCanvasContainer = styled.div`
