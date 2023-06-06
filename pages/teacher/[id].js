@@ -20,7 +20,7 @@ import guestList from "../teacherList.json";
 import randomColor from "randomcolor";
 import Head from "next/head";
 import favicon from "/assets/images/beer.png";
-import image1 from "/assets/images/_DSC0055.jpg";
+import image1 from "/assets/images/_DSC0061.jpg";
 import Image from "next/image";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 
