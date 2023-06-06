@@ -166,57 +166,95 @@ const Content = ({ setAnimationLength }) => {
   return (
     <StyledContentContainer ref={ref}>
       <StyledTextContainer>
-        <h1>Hájovna 2023</h1>
-        <p>
-          Opravdu jste si mysleli, že o nás uslyšíte naposledy? Dovolte nám Vás
-          vyvést z omylu. Rok se s rokem sešel, a je tu další{" "}
-          <strong>Hájovna</strong>! A doufáme, že i <strong>Vy</strong> budete u
-          toho! To, co právě teď, jistě v nepopsatelné euforii čtete, je
-          oficiální pozvánka na
-          <strong> Hájovnu 2023</strong>! <strong> 4. července</strong>.
-        </p>
-        <p>
-          Bude zle,
-          <strong>L18</strong>
-        </p>
-        <br />
-        <h2>OBČERSTVENÍ</h2>
-        <p>
-          Veškeré občerstvení zařídíme (ano, i alkohol). Jenom teda počítáme s
-          tím, že tě nezabije symbolických <strong>300 Kč</strong> za ten
-          nehorázný
-          <strong>ALL-INCLUSIVE</strong>, co si budete užívat na 2 (slovy dvou)
-          barech.
-        </p>
-        <h2>SPANÍ</h2>
-        <p>
-          V případě, že se chcete na akci vyspat, přibalte si do batůžku spacák
-          a pro sichr i stan. Vevnitř to není úplně jistota, většinou na
-          pokojích vládne anarchie.
-        </p>
-        <h2>DOPRAVA MHD</h2>
-        <p>
-          Na místo konání jezdí MHD. Z hlavního terminálu Fugnerova si chyťte{" "}
-          <strong>bus</strong> číslo <strong>15</strong> a dávejte si pozor, ať
-          jede až na zastávku Harcov Myslivna. Můžete se svézt až tam a nebo
-          vystoupit o jednu dřív
-          <strong>(Kadlická)</strong>. Vyjde to časově nastejno.
-        </p>
-        <h2>DOPRAVA AUTEM</h2>
-        <p>
-          Příjezd <strong>kočárem</strong> není probém, místo kde zaparkovat je
-          zařízené, a jestli pro z nějakého důvodu nepreferujete auto, tak k nám
-          jezdí 15. Adresa je
-          <span>
-            <a href="https://goo.gl/maps/ZPBfCVkDRLU1PVPL7" target="_blank">
-              Lukášovská 41
-            </a>
-          </span>
-          .
-        </p>
-        <h3>
-          Už se na Vás těší <strong>L18</strong>.
-        </h3>
+        {/* <old>
+          <h1>Hájovna 2023</h1>
+          <p>
+            Opravdu jste si mysleli, že o nás uslyšíte naposledy? Dovolte nám Vás
+            vyvést z omylu. Rok se s rokem sešel, a je tu další{" "}
+            <strong>Hájovna</strong>! A doufáme, že i <strong>Vy</strong> budete u
+            toho! To, co právě teď, jistě v nepopsatelné euforii čtete, je
+            oficiální pozvánka na
+            <strong> Hájovnu 2023</strong>! <strong> 4. července</strong>.
+          </p>
+          <p>
+            Bude zle,
+            <strong>L18</strong>
+          </p>
+          <br />
+          <h2>OBČERSTVENÍ</h2>
+          <p>
+            Veškeré občerstvení zařídíme (ano, i alkohol). Jenom teda počítáme s
+            tím, že tě nezabije symbolických <strong>300 Kč</strong> za ten
+            nehorázný
+            <strong>ALL-INCLUSIVE</strong>, co si budete užívat na 2 (slovy dvou)
+            barech.
+          </p>
+          <h2>SPANÍ</h2>
+          <p>
+            V případě, že se chcete na akci vyspat, přibalte si do batůžku spacák
+            a pro sichr i stan. Vevnitř to není úplně jistota, většinou na
+            pokojích vládne anarchie.
+          </p>
+          <h2>DOPRAVA MHD</h2>
+          <p>
+            Na místo konání jezdí MHD. Z hlavního terminálu Fugnerova si chyťte{" "}
+            <strong>bus</strong> číslo <strong>15</strong> a dávejte si pozor, ať
+            jede až na zastávku Harcov Myslivna. Můžete se svézt až tam a nebo
+            vystoupit o jednu dřív
+            <strong>(Kadlická)</strong>. Vyjde to časově nastejno.
+          </p>
+          <h2>DOPRAVA AUTEM</h2>
+          <p>
+            Příjezd <strong>kočárem</strong> není probém, místo kde zaparkovat je
+            zařízené, a jestli pro z nějakého důvodu nepreferujete auto, tak k nám
+            jezdí 15. Adresa je
+            <span>
+              <a href="https://goo.gl/maps/ZPBfCVkDRLU1PVPL7" target="_blank">
+                Lukášovská 41
+              </a>
+            </span>
+            .
+          </p>
+          <h3>
+            Už se na Vás těší <strong>L18</strong>.
+          </h3>
+        </old> */}
+          <h1>Hájovna 2023</h1>
+
+<p>Vážení učitelé,</p>
+
+<p>Opravdu jste si mysleli, že o nás uslyšíte naposledy? Dovolte nám <strong>Vás</strong> vyvést z omylu. Rok se s rokem sešel a je tu první třídní sraz technického lycea, který se koná opět na <strong>harcovské hájovně</strong>.</p>
+
+<p>Datum: <strong>5. července 2023</strong> (státní svátek slovanských věrozvěstů Cyrila a Metoděje)</p>
+
+<p>Místo: <span>
+              <a href="https://goo.gl/maps/ZPBfCVkDRLU1PVPL7" target="_blank">
+              Harcovská hájovna, Lukášovská 41, Liberec XVI
+              </a>
+            </span></p>
+
+<p>Čas: Začátek akce ještě upřesníme, ale počítejte někde mezi <strong>18-20</strong> hodinou</p>
+
+<h2>OBČERSTVENÍ:</h2>
+<p>K dispozici bude drobné občerstvení a na baru rozmanitá škála <strong>alkoholických</strong> i <strong>nealkoholických</strong> nápojů. Takže si budete moci vychutnat vychlazené pivo, destiláty nebo si dopřát osvěžující drink.</p>
+
+<h2>HARMONOGRAM:</h2>
+<p>Kromě občerstvení a nápojů nás čeká i <strong>zábavný program</strong>, který vás rozhodně nezklame. Připravte se na nostalgické vzpomínky, soutěže a překvapení, které jsme pro vás připravili.</p>
+
+<h2>KONEC:</h2>
+<p>Konec akce není specifikován a odvážní z vás mohou i přespat.</p>
+
+<h2>DOPRAVA:</h2>
+<p>Pokud se rozhodnete využít hromadnou dopravu, nejjednodušší způsob je <strong>autobus číslo 15</strong> směrem na konečnou Harcov Myslivna. Vystupte na zastávce <strong>Kadlická</strong> a ve směru jízdy popojděte cca 200 metrů. Hájovnu pak naleznete za pivovarem Vendelín po levé straně.</p>
+
+<p>Pokud pojedete autem, máme pro vás dobrou zprávu - lze zaparkovat přímo u chaty. Pouze zadejte do navigace adresu <span>
+              <a href="https://goo.gl/maps/ZPBfCVkDRLU1PVPL7" target="_blank">
+                Lukášovská 41
+              </a>
+            </span>.</p>
+
+<p>TĚŠÍME SE NA VÁS!</p>
+<p>Vaše třída <strong>L18</strong></p>
         <StyledImage {...image1} />
       </StyledTextContainer>
     </StyledContentContainer>
