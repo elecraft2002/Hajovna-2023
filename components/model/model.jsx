@@ -150,7 +150,7 @@ export function Model(props) {
             name="Cube002_1"
             castShadow
             receiveShadow
-            geometry={nodes.Cube002_1.geometry}
+            // geometry={nodes.Cube002_1.geometry}
             material={materials.Roof}
             userData={{ name: "Cube.002" }}
           />
